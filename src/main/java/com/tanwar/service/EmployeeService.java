@@ -33,5 +33,9 @@ public class EmployeeService {
 
 		return isExists;
 	}
+	
+	public Double calculateSalary(Integer grossSalary, Double taxPercent) {
+		return grossSalary - (grossSalary * (taxPercent/100));
+	}
 
 }

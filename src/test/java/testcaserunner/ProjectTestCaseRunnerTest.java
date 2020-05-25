@@ -8,7 +8,14 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features =  "src/test/java/feature",
-		glue = "stepdefination"
+		glue = {"stepdefination", "hooks"},
+		tags = {"@Outline"},
+		plugin = {"pretty",
+				"html:target/reports/html",
+				"json:target/reports/jsonreport.json"},
+		monochrome = true,
+		dryRun = false
+		
 )
 public class ProjectTestCaseRunnerTest {
 
